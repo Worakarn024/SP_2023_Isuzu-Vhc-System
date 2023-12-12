@@ -1,0 +1,22 @@
+docker-build-develop:
+  # Official docker image.
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker info
+  script:
+    - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token --password-stdin registry.gitlab.com
+    - docker build -f Dockerfile.prod -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+  only:
+    - develop
+
+docker-deploy-develop:
+  stage: deploy
+  image: alpine
+  script:
+    - apk add --update curl
+  only:
+    - develop

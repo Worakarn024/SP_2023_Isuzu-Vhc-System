@@ -1,0 +1,14 @@
+FROM node:16.14.0 AS production
+
+WORKDIR /usr/app
+
+ENV TERM=xterm
+ENV TZ=Asia/Bangkok
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build

@@ -1,0 +1,44 @@
+/* eslint-disable prettier/prettier */
+export interface VhcDto {
+  id: number;
+  branch_id: number;
+  vhc_model_id: number;
+  model_name: string;
+  mile_in: number;
+  engin_id: string;
+  chassis: string;
+  cus_id: number;
+  running_queue: string;
+  comment: string;
+  create_by: string;
+  update_by: string;
+  vhc_date: Date;
+  vhc_time: string;
+  cus_type: number;
+  is_body_damage: number;
+  PDF_file: string;
+  customer_signature: null;
+  sa_vhc_signature: null;
+  customer_recieve_signature: null;
+  sa_delivery_signature: null;
+  radio_pole: number;
+  hbg_sticker: number;
+  blame_rainy: number;
+  blame_dust: number;
+  blame_drop: number;
+  is_complete: number;
+  register: string;
+  company_name: string;
+  Cus_Name: string;
+  Cus_Surename: string;
+  M_Tel: string;
+  DateOfBirth: string;
+  mainpicture_picture1: null;
+  mainpicture_picture2: null;
+  mainpicture_picture3: null;
+  mainpicture_picture4: null;
+  mainpicture_picture5: null;
+  mainpicture_picture6: null;
+  mainpicture_picture7: null;
+  mainpicture_picture8: null;
+}
